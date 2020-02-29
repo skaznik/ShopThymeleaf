@@ -4,30 +4,32 @@
 
 <div class="container">
     <h2>Produkty</h2>
-    <table class="uk-table uk-table-stripped">
+    <table class="uk-table uk-table-striped uk-table-hover">
         <thead>
-        <tr>ID</tr>
-        <tr>Nazwa</tr>
-        <tr>Cena</tr>
-        <tr>Ilość</tr>
-        <tr>Dostępność</tr>
-        <tr>Akcje</tr>
+        <th>ID</th>
+        <th>Nazwa</th>
+        <th>Cena</th>
+        <th>Ilość</th>
+        <th>Dostępność</th>
+        <th>Akcje</th>
         </thead>
         <tbody>
-        <tr>
-            <td>2</td>
-            <td>Mleko</td>
-            <td>5.00</td>
-            <td>1000</td>
-            <td><span uk-ikon="icon: check"></span></td>
+        <tr th:each="product : ${products}">
+            <td th:text="${product.id}"></td>
+            <td th:text="${product.name}"></td>
+            <td th:text="|${#numbers.formatDecimal(product.price, 1, 2)} zł|"></td>
+            <td th:text="${product.quantity}"></td>
+            <td><span th:uk-icon="${product.available} ? 'check' : 'close'"></span></td>
             <td style="width: 250px">
-                <a href=""><input class="uk-button uk-button-primary" value="Edytuj" type="button"></a>
-                <a href=""><input class="uk-button uk-button-danger" value="Usuń" type="button"></a>
+                <a th:href="@{/products/edit/{id}(id=${product.id})}"><input class="uk-button uk-button-primary" value="Edytuj" type="button"></a>
+                <a th:href="@{/products/remove/{id}(id=${product.id})}"><input class="uk-button uk-button-danger" value="Usuń" type="button"></a>
             </td>
         </tr>
         </tbody>
     </table>
-
+<div>
+    <a th:href="@{/products/new}"><input style="background-color: #32d296; color: white" class="uk-button" type="button" value="Dodaj produkt"></a>
+</div>
 </div>
 
 </body>
