@@ -10,4 +10,8 @@ public class ShopController {
     public String welcome() {
         return "welcome";
     }
+    @GetMapping("shipping")
+    public String shipping() {
+        return "shipping";
+    }
 }
