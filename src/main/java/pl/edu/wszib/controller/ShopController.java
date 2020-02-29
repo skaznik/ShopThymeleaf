@@ -21,4 +21,8 @@ public class ShopController {
         model.addAttribute("shippingMethodPrice3", "20.20");
         return "shipping";
     }
+    @GetMapping("products")
+    public String products() {
+        return "products";
+    }
 }

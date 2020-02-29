@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" th:replace="~{fragments/layout :: layout(~{::.container})}">
+<body>
+
+<div class="container">
+    <h2>Produkty</h2>
+    <table class="uk-table uk-table-stripped">
+        <thead>
+        <tr>ID</tr>
+        <tr>Nazwa</tr>
+        <tr>Cena</tr>
+        <tr>Ilość</tr>
+        <tr>Dostępność</tr>
+        <tr>Akcje</tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>2</td>
+            <td>Mleko</td>
+            <td>5.00</td>
+            <td>1000</td>
+            <td><span uk-ikon="icon: check"></span></td>
+            <td style="width: 250px">
+                <a href=""><input class="uk-button uk-button-primary" value="Edytuj" type="button"></a>
+                <a href=""><input class="uk-button uk-button-danger" value="Usuń" type="button"></a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+
+</body>
+</html>
