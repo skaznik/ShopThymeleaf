@@ -1,19 +1,22 @@
 package pl.edu.wszib.domain;
 
 public class User {
-    private Long id;
+    private long id;
     private String login;
     private String email;
     private int age;
     private String country;
     private boolean active;
 
+    public User() {
 
-    public Long getId() {
+    }
+
+    public long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 

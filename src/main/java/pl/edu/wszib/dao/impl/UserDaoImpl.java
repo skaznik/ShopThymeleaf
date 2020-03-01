@@ -46,20 +46,12 @@ public class UserDaoImpl implements UserDao {
 
     private void prepareUserList() {
         User user = new User();
-        user.setLogin("User1");
-        user.setEmail("jakiś@emial");
-        user.setAge(40);
+        user.setLogin("test");
+        user.setEmail("jakiś");
+        user.setAge(30);
         user.setCountry("USA");
         user.setActive(true);
         saveUser(user);
-
-        User user1 = new User();
-        user1.setLogin("User2");
-        user1.setEmail("inny@emial");
-        user1.setAge(18);
-        user1.setCountry("Wyspy owcze");
-        user1.setActive(false);
-        saveUser(user1);
-
     }
 }
+

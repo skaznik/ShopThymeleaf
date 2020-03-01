@@ -13,5 +13,4 @@ public interface UserDao {
     void removeUser(Long id);
 
     User getByid(Long id);
-
 }
